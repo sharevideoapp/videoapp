@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="manifest" href="/mnf.json">
+  <meta name="theme-color" content="rgb(44,44,44)">
+  <meta name="description" content="Lomba berhitung dengan banyak orang, dan jadilah pemain terbaik.">
+  <title>Taretion - Lomba berhitung</title>
+  <link rel="icon" type="image/png" href="/about/taretion.png">
+  
+  <!--dibawah ini font-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/all.css" integrity="sha512-ajhUYg8JAATDFejqbeN7KbF2zyPbbqz04dgOLyGcYEk/MJD3V+HJhJLKvJ2VVlqrr4PwHeGTTWxbI+8teA7snw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <!-- diatas ini font-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+</head>
+<style type="text/css" media="all">
+    /* Dibawah ini adalah font */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    /* Diatas ini adalah font */
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 100%;
+      width: 100%;
+      user-select: none;
+      background-color: #1d1d1d;
+      zoom: reset;
+      z-index: 1;
+    }
+    
+    
+    
+        .navb {
+      height: 55px;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: flex;
+      position: fixed;
+      justify-content: space-between;
+      padding: 0 23px;
+      align-items: center;
+      background-color: rgb(44,44,44);
+      z-index: 2;
+      box-shadow: 1px 1px 1px 1px #1d1d1d1;
+    }
+    
+    
+    
+        .icon {
+      font-size: 21px;
+      margin: 0 15px 0px 0;
+      color: #ffa722;
+    }
+    
+    .iconn {
+      font-size: 21px;
+      color: #ffa722;
+    }
+    .icon:active {
+      color: #7b4f0c;
+    }
+    
+    .iconn:active {
+      color: #7b4f0c;
+    }
+    
+    
+        .title {
+      color: #ffa722;
+      font-size: 18px;
+      font-weight: 600;
+      font-family: Poppins, Arial, Sans-Serif;
+    }
+    
+    
+    #main {
+      margin-top: 125px;
+      z-index: 1;
+    }
+    
+    #profile_name {
+      z-index: 2;
+    }
+    
+    .profile {
+      margin-left: 25.5px;
+    }
+    
+    #username {
+      font-size: 19px;
+      font-weight: 600;
+      font-family: Poppins, Arial;
+      color:#f7f7f7;
+    }
+    
+    
+    
+    .my_appreciation {
+      display: flex;
+      align-items: center;
+      margin-top: 12px;
+      color: rgb(190,76,169);
+      font-size: 17.5px;
+      font-family: Poppins;
+      font-weight: 600;
+    }
+    
+    .cup {
+      font-size: 20px;
+      margin-right: 9px;
+    }
+    
+    .k {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 110px;
+    }
+    
+    .b {
+      border-radius: 100%;
+      background-color: transparent;
+      border: 1.1px solid #ffa722;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 27px;
+      color: #ffa722;
+      margin: 0 10px;
+    }
+    .b:active {
+      background-color: #4f401f;
+      border: 1.1px solid #ffa722;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 27px;
+      color: #ffa722;
+      margin: 0 10px;
+    }
+    
+    
+    
+    
+    
+    .button_case {
+     display: table-cell;
+     text-align: center;
+     vertical-align: middle;
+     margin: 0 5px;
+    }
+    .buttonName {
+      color: #ffa722;
+      font-size: 14px;
+      margin: 8.4px 1px 0 0;
+      font-family: Poppins, Arial;
+      font-weight: 600;
+      /*margin: 5px 0 0 14px;*/
+    }
+    
+     #input {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+    
+    .namee {
+      margin-top: 155px;
+      width: 70%;
+      height: 40px;
+      max-width: 290px;
+      background-color: transparent;
+      border: 2px solid #ffa722;
+      padding: 0 9px;
+      outline: none;
+      border-radius: 9px;
+      font-size: 17px;
+      font-weight: 500;
+      color: #f5f5f5;
+    }
+    
+    .namee:focus {
+      border: 2px solid #ffa722;
+    }
+    
+    
+    
+    
+    
+    .namee{
+    -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+    
+    .error {
+      color: #e52e2e;
+      margin: 22px 0 0 0;
+      font-weight: 600;
+      font-size: 14px;
+      font-family: Poppins;
+    }
+    
+
+
+
+
+    
+    
+    
+    .ldng {
+  top: 50%;
+  left: 50%;
+  outline: none !important;
+  position: fixed;
+  z-index: 10000;
+  background-color: rgb(44,44,44);
+  width: 60%;
+  max-width: 193px;
+  height: 105px;
+  border-radius: 7.5px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 600;
+  border: none !important;
+  user-select: none;
+  color: #e1e1e1;
+  transform: translate(-50%, -50%)
+    }
+    
+    
+    
+    #profile_navb {
+            height: 55px;
+      left: 0;
+      right: 0;
+      top: 0;
+      display: none;
+      position: fixed;
+      padding: 0 23px;
+      align-items: center;
+      background-color: rgb(44,44,44);
+      z-index: 2;
+      box-shadow: 1px 1px 1px 1px #1d1d1d1;
+    
+    }
+    
+    
+    
+    #profile_profile {
+      display: none;
+    }
+    
+
+</style>
+<body>
+  <nav class="navb">
+
+    <p class="title" translate="no">Taretion</p>
+<div class="icon_">
+<i onclick="taretion.open('ranking/')" class="icon fas fa-crown"></i>
+    <i onclick="taretion.open('/cn')" class="icon cn fas fa-user"></i>
+    <i onclick="taretion.open('about/')" class="iconn fas fa-info-circle"></i>
+    </div>
+  </nav>
+  
+  
+  <section id="main">
+    <div class="profile">
+      <p id="username">Loading...</p>
+      <div class="my_appreciation">
+                    <i class="cup fas fa-trophy"></i>
+ 
+        <p class="award_">Loading...</p>
+      </div>
+    </div>
+    <div class="k">
+      <div class="button_case">
+        
+
+      <div onclick="taretion.open('game.php')" class="b play">
+        <i class="fas fa-gamepad"></i>
+
+      </div>
+         <p class="buttonName">Bermain</p>
+            </div>
+            <div class="button_case">
+              
+
+      <div onclick="taretion.open('ranking/')" class="b player">
+          <i class="fas fa-crown"></i>
+      </div>
+         <p class="buttonName">Peringkat</p>
+                  </div>
+                  <div class="button_case mudah">
+                    
+
+      <div onclick="change_the_question_type()" class="b play">
+      <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 96 960 960" width="1.5em"><path fill="currentColor" d="m187 236 53 480q47-24 99-37t105-13q30 0 59.5 4t56.5 12q51 14 78 19t58 5h25l52-470H187Zm75 740q-23 0-40.5-15T202 923l-78-714q-2-14 6.5-23.5T153 176h654q14 0 22.5 9.5T836 209l-78 714q-2 23-19.5 38T698 976H262Z"/></svg>
+      </div>
+          <p class="buttonName">Mudah</p>
+                        </div>
+                        
+                        <!--hard-->
+                  <div class="button_case sedang">
+                    
+
+      <div onclick="change_the_question_type()" class="b play">
+          <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" viewBox="0 96 960 960" width="1.5em"><path fill="currentColor" d="m187 236 24 217q51-32 111.5-49T444 386q30 0 59.5 4t56.5 12q51 14 78 19t58 5h56l21-190H187Zm75 740q-23 0-40.5-15T202 923l-78-714q-2-14 6.5-23.5T153 176h654q14 0 22.5 9.5T836 209l-78 714q-2 23-19.5 38T698 976H262Z"/></svg>
+      </div>
+          <p class="buttonName">Sedang</p>
+                        </div>
+    </div>
+  </section>
+  <section id="profile_name">
+    <div id="input">
+    <input onkeypress="y(event)" class="namee" autofocus type="username" name="username" autocorrect="off" placeholder="Username" autocomplete="off"/>
+  </section>
+  <div class="errorr" style="display: flex; justify-content: center;">
+     <p class="error">Error</p>
+  </div>
+     </div>
+     
+     <dialog class="ldng">
+  <p>Loading...</p>
+</dialog>
+<script type="text/javascript" charset="utf-8">
+  if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/swk.js')
+                .then(function(x) {
+                    x
+                }).catch(function(x) {
+                    x
+                });
+        }
+</script>
+  <script type="text/javascript" charset="utf-8">
+
+    const award = document.querySelector(".award_")
+    const main = document.querySelector("#main")
+    const usernamee = document.getElementById("username")
+    const profile_name = document.querySelector("#profile_name")
+    const name = document.querySelector(".namee")
+    const error = document.querySelector(".error")
+    const loading = document.querySelector(".ldng")
+    const sedang = document.querySelector(".sedang")
+    const mudah = document.querySelector(".mudah")
+    const navb = document.querySelector(".navb")
+    const profile_navb = document.querySelector("#profile_navb")
+    const profile_profile = document.querySelector("#profile_profile")
+    const navb_username = document.querySelector("#navb_username")
+    const errorr = document.querySelector(".errorr")
+    
+        document.title = "Taretion"
+   
+        if(!localStorage.getItem("question_type")){
+      localStorage.setItem("question_type", "mudah")
+    }
+
+    if(localStorage.getItem("question_type")=="mudah"){
+  mudah.style.display = "block"
+    sedang.style.display = "none"
+    } else {
+      sedang.style.display = "block"
+      mudah.style.display = "none"
+    }
+   
+    function change_the_question_type(){
+      if(localStorage.getItem("question_type")=="mudah"){
+        localStorage.setItem("question_type", "sedang")
+      setTimeout(function(){
+        
+
+    sedang.style.display = "block"
+     mudah.style.display = "none"
+      }, 155)
+      } else {
+        localStorage.setItem("question_type", "mudah")
+        setTimeout(function(){
+        mudah.style.display = "block"
+       sedang.style.display = "none"
+        }, 155)
+      }
+    }
+                   function va(int) {
+  return int.toString().split(".")[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".") + (int.toString().split(".")[1]?"," + int.toString().split(".")[1]:"");
+}
+award.innerText = localStorage.getItem("award")?va(localStorage.getItem("award")):0
+setInterval(function(){  
+award.innerText = localStorage.getItem("award")?va(localStorage.getItem("award")):0
+},1500)
+    
+    taretion = {
+    open : function(url){
+      setTimeout(function(){
+        window.location.href = url
+      },155)
+    }
+    }
+    let ovr = document.createElement("div");
+    ovr.style.display = "none"
+    loading.style.display = "none"
+    function loading_(){
+      loading.style.display = "flex"
+  ovr.style.display = "block"
+ovr.style.height = "100%";
+  ovr.style.width = "100%";
+  ovr.style.position = "fixed";
+  ovr.style.pointerEvents = "none";
+  ovr.style.top = "0";
+  ovr.style.left = "0";
+  ovr.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+  ovr.style.backdropFilter = "blur(4px)";
+  ovr.style.webkitBackdropFilter = "blur(4px)";
+  ovr.style.zIndex = "999";
+    document.body.appendChild(ovr);
+  loading.showModal()
+}
+    function _loading(){
+      loading.style.display = "none"
+    loading.close()
+    document.body.style.filter = "none";
+    }
+    if(localStorage.getItem("username")){
+      if(!localStorage.getItem("id")){
+        fetch('http://localhost:3000/ranking/all_users.json')
+  .then(r => r.json())
+  .then(y => {
+    const usrnmx = localStorage.getItem("username")
+    const user_x = y.find(obj => obj.username === usrnmx);
+    
+    if (user_x) {
+      localStorage.setItem("id",user_x.id)
+    }
+  })
+  .catch(e => {
+e
+  });
+  
+      }
+      main.style.display = "block"
+      profile_name.style.display = "none"
+      usernamee.innerHTML = atob(localStorage.getItem("username").replaceAll("jh","="))
+      } else {
+      main.style.display = "none"
+      profile_name.style.display = "block"
+      document.querySelector(".cn").style.display = "none"
+    }
+    error.style.display = "none"
+    function y(event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        if(name.value.trim()){
+          if(name.value.trim().length>3){
+            if(name.value.trim().length<15){
+                if (!name.value.trim().includes("/") && !name.value.trim().includes("\\") && name.value[0] !== "." && name.value[0] !== "," && !name.value.trim().includes("-") && !name.value.trim().includes("_") && !name.value.trim().includes("=")  && !name.value.trim().includes("&") && !name.value.trim().includes("+") && !name.value.trim().includes("`") && !name.value.trim().includes(",") && !name.value.trim().includes(".") && !name.value.trim().includes("~") && !name.value.trim().includes("✓")) {
+                  if(!/\p{RI}\p{RI}|\p{Emoji}(\u{fe0f}\u{20e3}|\p{EMod}?|[\u{e0020}-\u{e007e}]+\u{e007f})?(\u{200d}(\p{RI}\p{RI}|\p{Emoji}(\u{fe0f}|\u{20e3}\p{EMod}?|[\u{e0020}-\u{e007e}]+\u{e007f})?))*/gu.test(name.value)){
+                    error.style.display = "none";
+             loading_()
+var dt = {
+  username: btoa(name.value.trim()).replaceAll("=", "jh")
+};
+var dat = JSON.stringify(dt);
+var xhre = new XMLHttpRequest();
+xhre.onreadystatechange = function() {
+  if (this.readyState == 4 && this.status == 200) {
+    // rspn
+    var res = this.responseText;
+    if(res=="y"){
+          setTimeout(function(){
+    localStorage.setItem("username", btoa(name.value.trim()).replaceAll("=", "jh"));
+    ovr.style.display = "none";
+    _loading();
+    usernamee.innerText = name.value.trim();
+    main.style.display = "block";
+    profile_name.style.display = "none";
+    
+    if(localStorage.getItem("username")){
+      if(!localStorage.getItem("id")){
+        fetch('http://localhost:3000/ranking/all_users.json')
+  .then(r => r.json())
+  .then(y => {
+    const usrnmx = localStorage.getItem("username")
+    const user_x = y.find(obj => obj.username === usrnmx);
+    
+    if (user_x) {
+      localStorage.setItem("id",user_x.id)
+    }
+  })
+  .catch(e => {
+e
+  });
+  
+      }
+    }
+},515)
+    } else if(res=="n"){
+      setTimeout(function(){
+        _loading()
+      ovr.style.display = "none";
+      setTimeout(function(){
+        error.innerText = "Username tersebut sudah ada";
+                error.style.display = "block";
+                setTimeout(function() {
+                  error.style.display = "none";
+               }, 2500);
+      },90)
+      
+      },510)
+      
+      
+    }
+    
+
+  }
+};
+xhre.open("POST", "data.php", true);
+xhre.setRequestHeader("Content-Type", "application/json");
+xhre.send(dat);
+                  } else {
+                error.innerText = "Nama tidak boleh menggunakan emot";
+                error.style.display = "block";
+                setTimeout(function() {
+                  error.style.display = "none";
+               }, 2500);
+                  }
+              } else {
+                error.innerText = "Nama tidak boleh seperti itu";
+                error.style.display = "block";
+                setTimeout(function() {
+                  error.style.display = "none";
+               }, 2500);
+              }
+            } else {
+              error.innerText = "Nama terlalu panjang"
+          error.style.display = "block"
+          setTimeout(function(){
+        error.style.display = "none"
+      }, 2500)
+        }
+          } else {
+            error.innerText = "Nama terlalu pendek"
+          error.style.display = "block"
+          setTimeout(function(){
+        error.style.display = "none"
+      }, 2500)
+        }
+        }  else {
+          error.innerText = "Masukkan nama anda"
+          error.style.display = "block"
+          setTimeout(function(){
+        error.style.display = "none"
+      }, 2500)
+        }
+      }
+    }
+  </script>
+</body>
+</html>
